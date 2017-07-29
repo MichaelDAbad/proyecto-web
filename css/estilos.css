@@ -1,0 +1,19 @@
+body{
+	background-image: url("../img/solid.png");
+}
+.navbar-brand:link, .navbar-brand:visited{
+	color: white !important;
+}
+.navbar-brand:hover, .navbar-brand:active{
+	color: deepskyblue !important;
+
+} 
+.jumbotron{
+	background-color: #707070 !important ;
+	color: white !important;
+}
+.panel-heading{
+	background-color: #707070 !important;
+	color: white !important;
+
+}838487

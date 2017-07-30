@@ -3,16 +3,18 @@ include_once"app/Conexion.php";
 include_once"app/Usuario.php";
 include_once"app/RepositorioUsuario.php";
 include_once"app/ValidarRegistro.php";
+include_once"app/Redireccion.php";
 if(isset($_POST["enviar"])){
 	Conexion::abrirConexion();
-	$validador=new ValidarRegistro($_POST["nombre"],$_POST["email"],$_POST["clave"],$_POST["clave2"]);
+	$validador=new ValidarRegistro($_POST["nombre"],$_POST["email"],$_POST["clave"],$_POST["clave2"],Conexion::obtenerConexion());
 
 	if($validador->registroValido()){
 		$usuario=new Usuario('',$validador->obtenerNombre(),$validador->obtenerEmail(),$validador->obtenerClave(),'','');
 		$usuarioInsertado=RepositorioUsuario::insertarUsuario(Conexion::obtenerConexion(),$usuario);
 	
 	if($usuarioInsertado){
-		//rederigui al login
+		//rederigui al registro correcto
+		Redireccion::redirigir(RUTA_REGISTRO_CORRECTO.'?nombre='.$usuario->obtenerNombre());
 	}
 }
 	Conexion::serrarConexion();
@@ -71,4 +73,5 @@ include_once"plantillas/navbar.php";
 		</div>
 	</div>
 </div>
+
 <?php include_once"plantillas/pie.php";?>

@@ -54,6 +54,48 @@ class RepositorioUsuario{
 		}
 		return $usuarioInsertado;
 	}
+	public static function nombreExiste($conexion,$nombre){
+		$nombreExiste=true;
+		if($conexion){
+			try{
+				$sql="SELECT * FROM usuarios where nombre=:nombre";
+				$sentencia=$conexion->prepare($sql);
+				$sentencia->bindParam(':nombre',$nombre,PDO::PARAM_STR);
+				$sentencia->execute();
+				$resultado=$sentencia->fetchAll();
+				if(count($resultado)){
+					$nombreExiste=true;
+				}else{
+					$nombreExiste = false;
+				}
+			}catch(PDOException $ex){
+				echo "Error:".$ex->getMessage();
+			}
+		}
+		return $nombreExiste;
+	}	
+
+
+	public static function emailExiste($conexion,$email){
+		$emailExiste=true;
+		if($conexion){
+			try{
+				$sql="SELECT * FROM usuarios where email=:email";
+				$sentencia=$conexion->prepare($sql);
+				$sentencia->bindParam(':email',$email,PDO::PARAM_STR);
+				$sentencia->execute();
+				$resultado=$sentencia->fetchAll();
+				if(count($resultado)){
+					$emailExiste=true;
+				}else{
+					$emailExiste = false;
+				}
+			}catch(PDOException $ex){
+				echo "Error:".$ex->getMessage();
+			}
+		}
+		return $emailExiste;
+	}
 
 
 }

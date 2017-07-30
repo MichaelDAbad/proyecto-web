@@ -6,6 +6,7 @@ body{
 }
 .navbar-brand:hover, .navbar-brand:active{
 	color: deepskyblue !important;
+	
 
 } 
 .jumbotron{
@@ -16,4 +17,22 @@ body{
 	background-color: #707070 !important;
 	color: white !important;
 
-}838487
+}
+/*  panel de desplegable     */
+.mich:hover{
+background: #303030 !important;
+}
+
+.dropdown-menu{
+background: #404040 !important;
+}
+.abad:hover{
+background: black !important;
+color: white !important;
+}
+.abad{
+	color:white  !important;
+}
+.tit{
+	color:white  !important;
+}

@@ -1,4 +1,5 @@
 <?php
+include_once"RepositorioUsuario.php";
 class ValidarRegistro{
 	private $avisoInicio;
 	private $avisoCierre;
@@ -12,15 +13,15 @@ class ValidarRegistro{
 	private $errorclave2;
 	private $clave;
 
-	public function __construct($nombre,$email,$clave1,$clave2){
+	public function __construct($nombre,$email,$clave1,$clave2,$conexion){
 		$this->avisoInicio="<br><div class='alert alert-danger' role='alert'>";
 		$this->avisoCierre="</div>";
 
 		$this->nombre="";
 		$this->email="";
 		$this->clave="";
-		$this->errorNombre=$this->validarNombre($nombre);
-		$this->errorEmail=$this->validarEmail($email);
+		$this->errorNombre=$this->validarNombre($conexion,$nombre);
+		$this->errorEmail=$this->validarEmail($conexion,$email);
 		$this->errorclave1=$this->validarclave1($clave1);
 		$this->errorclave2=$this->validarclave2($clave1,$clave2);
 
@@ -36,7 +37,7 @@ class ValidarRegistro{
 		}
 
 	}
-	private function  validarNombre($nombre){
+	private function  validarNombre($conexion,$nombre){
 		if(!$this->variableIniciada($nombre)){;
 			return "Deves escribir un nombre de usuario";
 		}else{
@@ -48,14 +49,20 @@ class ValidarRegistro{
 		if(strlen($nombre)>24){
 			return "el nombre no debe de ser mayor de 12 carecteres";
 		}
+		if(RepositorioUsuario::nombreExiste($conexion, $nombre)){
+			return "Este nombre de usuario ya esta en uso. por favor prueva otro nombre";
+		}
 		return "";
 
 	}
-	private function validarEmail($email){
+	private function validarEmail($conexion,$email){
 		if(!$this->variableIniciada($email  )){
 			return "Debes proporcionar un email";
 		}else{
 			$this->email=$email;
+			if(RepositorioUsuario::emailExiste($conexion, $email)){
+			return "Este email ya está en uso. Por favor pruebe otro o <a href='#'>intente recuperar su contraseña</a>.";
+		}
 			return "";
 		}
 	}

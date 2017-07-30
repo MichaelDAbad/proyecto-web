@@ -1,47 +1,47 @@
 <?php
 class Entrada{
 	private $id;
-	private $autorId;
+	private $autor_id;
 	private $titulo;
 	private $texto;
 	private $fecha;
 	private $activa;
 
-	public function __construct($id,$autorId,$titulo,$texto,$fecha,$activa){
+	public function __construct($id,$autor_id,$titulo,$texto,$fecha,$activa){
 		$this->id=$id;
-		$this->autorId=$autorId;
+		$this->autor_id=$autor_id;
 		$this->titulo=$titulo;
 		$this->texto=$texto;
 		$this->fecha=$fecha;
 		$this->activa=$activa;
 	}
 	// se llaman geters
-	public function obtenerId(){
+	public function obtener_id(){
 		return $this->id;
 	}
-	public function obtenerAutorId(){
-		return $this->autorId;
+	public function obtener_autor_id(){
+		return $this->autor_id;
 	}
-	public function obtenerTitulo(){
+	public function obtener_titulo(){
 		return $this->titulo;
 	}
-	public function obtenerTexto(){
+	public function obtener_texto(){
 		return $this->texto;
 	}
-	public function obtenerFecha(){
+	public function obtener_fecha(){
 		return $this->fecha;
 	}
-	public function estaActiva(){
+	public function esta_activa(){
 		return $this->activa;
 	}
 	// se llaman seters
-	public function cambiarTitulo($titulo){
+	public function cambiar_titulo($titulo){
 		$this->titulo=$titulo;
 	}
-	public function cambiarTexto($texto){
+	public function cambiar_texto($texto){
 		$this->texto=$texto;
 	}
-	public function cambiarActiva($activa){
+	public function cambiar_activa($activa){
 		$this->activa=$activa;
 	}
 

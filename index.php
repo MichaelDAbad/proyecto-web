@@ -1,6 +1,7 @@
 <?php
 include_once"app/Conexion.php";
 include_once"app/RepositorioUsuario.php";
+include_once"app/EscritorEntradas.php";
 
 $titulo="Abad-05";//nombre del titulo de la pagina web
 
@@ -59,14 +60,10 @@ include_once"plantillas/navbar.php";
     			</div>
     		</div>
     		<div class="col-md-8">
-    			<div class="panel panel-default">
-    				<div class="panel-heading">
-    					<span class="glyphicon glyphicon-time" aria-hidden="true"></span>Ultimas entradas
-    				</div>
-    				<div class="panel-body">
-    					<P>Todavia  no hay entradas que mostrar</P>
-    				</div>
-    			</div>
+    			<?php 
+                //echo "Escribiendo..";
+                EscritorEntradas::escribirEntradas()
+                ?>
     		</div>
     	</div>
     </div>

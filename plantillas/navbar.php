@@ -3,7 +3,7 @@ include_once"app/ControlSesion.php";
 include_once"app/Config.php";
 Conexion::abrirConexion();
 $totalUsuarios=RepositorioUsuario::obtenerNumeroUsuarios(Conexion::obtenerConexion());
-Conexion::serrarConexion();
+
 ?>
 <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container">

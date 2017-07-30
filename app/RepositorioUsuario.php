@@ -1,4 +1,5 @@
 <?php
+
 class RepositorioUsuario{
 	public static function obtener_tabla($conexion){
 		$usuarios=array();
@@ -95,6 +96,32 @@ class RepositorioUsuario{
 			}
 		}
 		return $emailExiste;
+	}
+
+
+		public static function obtenerUsuarioPorEmail($conexion, $email){
+		$usuario= null;
+		if(isset($conexion)){
+			try{
+				include_once"Usuario.php";
+				$sql="SELECT * FROM usuarios WHERE email= :email";
+				$sentencia=$conexion->prepare($sql);
+				$sentencia->bindParam(':email',$email,PDO::PARAM_STR);
+				$sentencia->execute();
+				$resultado=$sentencia->fetch();
+				if(!empty($resultado)){
+					$usuario= new Usuario($resultado['id'],
+						$resultado['nombre'],
+						$resultado['email'],
+						$resultado['passwor'],
+						$resultado['fecha_registro'],
+						$resultado['activo']);
+				}
+			}catch(PDOException $ex){
+				echo "Error:".$ex->getmessage();
+			}
+		}
+		return $usuario;
 	}
 
 

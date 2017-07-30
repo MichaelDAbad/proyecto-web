@@ -47,6 +47,9 @@ class Usuario{
 		$this->estado=$estado;
 	}
 
+	//login 
+
+
 
 }
 ?>

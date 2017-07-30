@@ -1,4 +1,6 @@
 <?php
+include_once"app/ControlSesion.php";
+include_once"app/Config.php";
 Conexion::abrirConexion();
 $totalUsuarios=RepositorioUsuario::obtenerNumeroUsuarios(Conexion::obtenerConexion());
 Conexion::serrarConexion();
@@ -32,13 +34,67 @@ Conexion::serrarConexion();
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="mich">
+          <?php 
+          if(ControlSesion::sesionIniciada()){
+
+            ?>
+            <li class="">
+              <a href="#">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <?php echo  ' '.$_SESSION["nombreUsuario"];?>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" arial-expanded="false">
+                <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>Gestor<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" class="abad">
+                    Entradas
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="abad">
+                    Comentarios
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="abad">
+                    Usuarios
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="abad">
+                    Favoritos
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+                  <a href="<?php echo RUTA_LOGOUT?>">
+                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Cerrar sesión
+
+                  </a>
+                </li>
+            <?php 
+          }else{
+            ?>
+             <li><a href="#" class="mich">
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                     <?php echo  $totalUsuarios; ?>
                 </a>
             </li>
-            <li><a href="<?php echo RUTA_LOGIN?>" class="mich"><span class="glyphicon glyphicon-log-in"></span>Iniciar sesion</a></li>
-            <li><a href="<?php echo RUTA_REGISTRO ?>" class="mich"><span class="glyphicon glyphicon-plus"></span> Registro</a></li>
+            <li>
+                <a href="<?php echo RUTA_LOGIN?>" class="mich"><span class="glyphicon glyphicon-log-in"></span>Iniciar sesion</a>
+            </li>
+            <li>
+                <a href="<?php echo RUTA_REGISTRO ?>" class="mich"><span class="glyphicon glyphicon-plus"></span> Registro</a>
+            </li>
+
+          <?php
+          }
+          ?>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

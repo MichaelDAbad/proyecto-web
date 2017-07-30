@@ -9,7 +9,8 @@ if(isset($_POST["enviar"])){
 	$validador=new ValidarRegistro($_POST["nombre"],$_POST["email"],$_POST["clave"],$_POST["clave2"],Conexion::obtenerConexion());
 
 	if($validador->registroValido()){
-		$usuario=new Usuario('',$validador->obtenerNombre(),$validador->obtenerEmail(),$validador->obtenerClave(),'','');
+		$usuario=new Usuario('',$validador->obtenerNombre(),$validador->obtenerEmail()
+			,password_hash($validador->obtenerClave(),PASSWORD_DEFAULT),'','');
 		$usuarioInsertado=RepositorioUsuario::insertarUsuario(Conexion::obtenerConexion(),$usuario);
 	
 	if($usuarioInsertado){

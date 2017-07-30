@@ -10,3 +10,4 @@ define("SERVIDOR","http://localhost/proyecto-web");
 define("RUTA_REGISTRO",SERVIDOR."/registro.php");
 define("RUTA_REGISTRO_CORRECTO",SERVIDOR."/registroCorrecto.php");
 define("RUTA_LOGIN",SERVIDOR."/login.php");
+define("RUTA_LOGOUT","SERVIDOR"."logout.php");

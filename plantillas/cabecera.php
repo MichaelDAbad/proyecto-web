@@ -15,5 +15,5 @@
 	
 </head>
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+  	<link rel="stylesheet" type="text/css" href="http://localhost/proyecto-web/css/estilos.css">
 <body>

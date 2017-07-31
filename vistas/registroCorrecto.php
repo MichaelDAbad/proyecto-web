@@ -3,12 +3,13 @@ include_once"app/Config.php";
 include_once"app/Conexion.php";
 include_once"app/RepositorioUsuario.php";
 include_once"app/Redireccion.php";
-
+/* 
 if(isset($_GET["nombre"])&& !empty($_GET["nombre"])){
 	$nombre = $_GET["nombre"];
 	}else{
 		Redireccion::redirigir(SERVIDOR);
 	}
+*/
 $titulo="Registro Correcto";
 include_once"plantillas/cabecera.php";
 include_once"plantillas/navbar.php";

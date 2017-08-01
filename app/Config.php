@@ -12,6 +12,7 @@ define("RUTA_REGISTRO_CORRECTO",SERVIDOR."/registroCorrecto");
 define("RUTA_LOGIN",SERVIDOR."/login");
 define("RUTA_LOGOUT",SERVIDOR."/logout");
 define("RUTA_ENTRADA",SERVIDOR."/entrada");
+define("RUTA_GESTOR",SERVIDOR."/gestor");
 //rutas de bootstrap, css  y js
 define("RUTA_CSS",SERVIDOR."/css/");
 define("RUTA_JS",SERVIDOR."/js/");

@@ -32,6 +32,9 @@ if($partes_ruta[0]=='proyecto-web'){
 			case 'registro':
 				$ruta_elegida='vistas/registro.php';
 				break;
+			case 'gestor':
+				$ruta_elegida="vistas/gestor.php";
+				break;
 			case 'relleno-dev':
 				$ruta_elegida="vistas/scriptRelleno.php";
 				break;

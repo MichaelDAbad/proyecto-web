@@ -45,6 +45,11 @@ Entrada</a></li>
                 <?php echo  ' '.$_SESSION["nombreUsuario"];?>
               </a>
             </li>
+            <li class="">
+              <a href="<?php echo RUTA_GESTOR?>">
+                <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>Gestor
+              </a>
+            </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" arial-expanded="false">
                 <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>Gestor<span class="caret"></span>

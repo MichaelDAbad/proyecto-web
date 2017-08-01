@@ -18,7 +18,8 @@ $totalUsuarios=RepositorioUsuario::obtenerNumeroUsuarios(Conexion::obtenerConexi
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="<?php echo RUTA_ENTRADAS ;?>" class="mich"><span class="glyphicon glyphicon-th-list"></span>Entrada</a></li>
+            <li><a href="<?php echo RUTA_ENTRADAS ;?>" class="mich"><i class="fa fa-futbol-o" aria-hidden="true"></i>
+Entrada</a></li>
             <li><a href="<?php echo RUTA_FAVORITOS?>" class="mich"><span class="glyphicon glyphicon-star"></span>Favoritos</a></li>
             <li class="dropdown">
               <a href="<?php echo RUTA_AUTORES?>" class="dropdown-toggle mich" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-book"></span>Autores <span class="caret"></span></a>
@@ -72,7 +73,7 @@ $totalUsuarios=RepositorioUsuario::obtenerNumeroUsuarios(Conexion::obtenerConexi
               </ul>
             </li>
             <li>
-                  <a href="<?php echo RUTA_LOGOUT?>">
+                  <a href="<?php echo RUTA_LOGOUT ?>">
                     <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Cerrar sesión
 
                   </a>

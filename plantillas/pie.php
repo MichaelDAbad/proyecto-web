@@ -1,7 +1,8 @@
 <?php
 Conexion::serrarConexion();
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- componente de jquery y bootstrap descarganos OJO(NO CDN)-->
+<script src="<?php echo SERVIDOR;?>/js/jquery-3.2.1.min.js"></script>
+<script src="<?php echo SERVIDOR;?>/js/bootstrap.min.js"></script>
 </body>
 </html>

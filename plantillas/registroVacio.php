@@ -14,4 +14,4 @@
 								<label>Repita la contraseña</label>
 								<input type="text" name="clave2" class="form-control">
 							</div>
-							<button type="submit" class="btn btn-primary btn-lg btn-block" name="enviar"> Enviar datos</button>
+							<button type="submit" class="btn btn-success btn-lg btn-block" name="enviar"> Enviar datos</button>

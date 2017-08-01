@@ -125,5 +125,31 @@ class RepositorioUsuario{
 	}
 
 
+		public static function obtenerUsuarioPorId($conexion, $id){
+		$usuario= null;
+		if(isset($conexion)){
+			try{
+				include_once"Usuario.php";
+				$sql="SELECT * FROM usuarios WHERE id= :id";
+				$sentencia=$conexion->prepare($sql);
+				$sentencia->bindParam(':id',$id,PDO::PARAM_STR);
+				$sentencia->execute();
+				$resultado=$sentencia->fetch();
+				if(!empty($resultado)){
+					$usuario= new Usuario($resultado['id'],
+						$resultado['nombre'],
+						$resultado['id'],
+						$resultado['passwor'],
+						$resultado['fecha_registro'],
+						$resultado['activo']);
+				}
+			}catch(PDOException $ex){
+				echo "Error:".$ex->getmessage();
+			}
+		}
+		return $usuario;
+	}
+
+
 }
 ?>

@@ -60,7 +60,7 @@ include_once"plantillas/navbar.php";
 							$validador->mostrarError();
 						}
 						?>
-						<button type="submit" name="login" class="btn btn-lg btn-primary btn-block">Ingresar</button>
+						<button type="submit" name="login" class="btn btn-lg btn-success btn-block">Ingresar</button>
 					</form>
 					<br>
 					<br>

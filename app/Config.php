@@ -10,7 +10,7 @@ define("SERVIDOR","http://localhost/proyecto-web");
 define("RUTA_REGISTRO",SERVIDOR."/registro");
 define("RUTA_REGISTRO_CORRECTO",SERVIDOR."/registroCorrecto");
 define("RUTA_LOGIN",SERVIDOR."/login");
-define("RUTA_LOGOUT","SERVIDOR"."logout");
+define("RUTA_LOGOUT",SERVIDOR."/logout");
 define("RUTA_ENTRADA",SERVIDOR."/entrada");
 //rutas de bootstrap, css  y js
 define("RUTA_CSS",SERVIDOR."/css/");

@@ -14,6 +14,8 @@
 	?>
 	
 </head>
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<link rel="stylesheet" type="text/css" href="http://localhost/proyecto-web/css/estilos.css">
+<!-- estamos utilizando CDN por que lo que descargamos no funciona muy bien los gripicons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo SERVIDOR ?>/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo SERVIDOR?>/css/estilos.css">
 <body>

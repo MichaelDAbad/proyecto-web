@@ -17,7 +17,6 @@ $partes_ruta=explode('/',$ruta);
 $partes_ruta=array_filter($partes_ruta);
 $partes_ruta=array_slice($partes_ruta, 0);
 
-
 $ruta_elegida='vistas/404.php';
 if($partes_ruta[0]=='proyecto-web'){
 	if(count($partes_ruta)==1){
@@ -50,6 +49,9 @@ if($partes_ruta[0]=='proyecto-web'){
 			Conexion::abrirConexion();
 			$entrada=RepositorioEntrada::obtenerEntradaPorUrl(Conexion::obtenerConexion(),$url);
 			if($entrada!=null){
+				$autor=RepositorioUsuario::obtenerUsuarioPorId(Conexion::obtenerConexion(),$entrada->obtener_autor_id());
+				$comentarios=RepositorioComentario::obtenerComentarios(Conexion::obtenerConexion(),$entrada->obtener_id());
+				$entradas_al_azar=RepositorioEntrada::obtenerEntradasAlAzar(Conexion::obtenerConexion(),6);
 				$ruta_elegida='vistas/entrada.php';
 			}
 		}

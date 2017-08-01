@@ -10,11 +10,11 @@ body{
 
 } 
 .jumbotron{
-	background-color: #707070 !important ;
+	background-color: #ff80d5 !important ;
 	color: white !important;
 }
 .panel-heading{
-	background-color: #707070 !important;
+	background-color: #ff80d5 !important;
 	color: white !important;
 
 }
@@ -36,4 +36,9 @@ color: white !important;
 .tit{
 	color:white  !important;
 }
-.
+
+.contenido-articulo{
+	background-color: white;
+	/* tamaño resposivo en em es mejor */
+	padding: 2em;
+}
